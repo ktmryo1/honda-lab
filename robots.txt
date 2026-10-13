@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /honda-lab/callback/
+Sitemap: https://ktmryo1.github.io/honda-lab/sitemap.xml

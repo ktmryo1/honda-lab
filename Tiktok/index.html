@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Honda Lab TikTok API（AffiliateAutoPost）</title>
+<meta name="description" content="Honda Lab TikTok API is a content management tool that lets the creator upload and publish their own videos to their own TikTok account via the official TikTok Content Posting API.">
+<link rel="icon" href="../assets/icon-32.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><div class="inner">
+  <a class="brand" href="./"><img src="../assets/icon-180.png" alt="">Honda Lab TikTok API</a>
+  <nav><a href="../">Honda Lab</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="../contact.html">Contact</a></nav>
+</div></header>
+<main>
+  <section class="card hero">
+    <img src="../assets/icon-512.png" alt="Honda Lab logo">
+    <h1>Honda Lab TikTok API</h1>
+    <p>動画の投稿管理ツール「AffiliateAutoPost」のTikTok連携機能</p>
+    <p class="muted">A content management tool for publishing the creator's own videos to TikTok.</p>
+  </section>
+
+  <section class="card">
+    <h2>概要</h2>
+    <p>Honda Lab TikTok API は、個人クリエイター「ほんだ（Honda Lab）」が制作した動画を、本人が認可したTikTokアカウントへ投稿するための機能です。投稿管理ツール「AffiliateAutoPost」に組み込まれ、TikTok公式の Login Kit と Content Posting API を使用します。</p>
+
+    <h2>主な機能と使用するスコープ</h2>
+    <table>
+      <tr><th>製品・スコープ</th><th>用途</th></tr>
+      <tr><td>Login Kit / <code>user.info.basic</code></td><td>TikTokでログインし、連携したアカウントの表示名とアイコンを画面に表示して、どのアカウントに投稿するかを確認します。</td></tr>
+      <tr><td>Content Posting API / <code>video.upload</code></td><td>作成した動画をTikTokの下書き（受信トレイ）へアップロードし、TikTokアプリ内で編集してから投稿できるようにします。</td></tr>
+      <tr><td>Content Posting API / <code>video.publish</code></td><td>ユーザーがツール上でキャプション・公開範囲・コメント等の設定を確認し、「投稿」を押した動画だけを直接投稿します。</td></tr>
+    </table>
+
+    <h2>使い方の流れ</h2>
+    <ol>
+      <li>ツールの「TikTokと連携」ボタンからTikTokにログインし、権限を許可します。</li>
+      <li>連携したアカウントの表示名とアイコンが表示されます。</li>
+      <li>投稿する動画を選び、キャプション（広告の場合は「#PR」を含む）、公開範囲、コメント・デュエット・リミックスの可否、コンテンツの開示設定を確認します。</li>
+      <li>「下書きに送る」または「投稿する」を押すと、TikTokへアップロードされます。</li>
+      <li>投稿状態はツール上で確認できます。連携はいつでも解除できます。</li>
+    </ol>
+    <p class="notice">ユーザーの確認なしに自動で投稿することはありません。ほかのユーザーの動画や個人データを収集・転載する機能はありません。</p>
+
+    <h2>ポリシー</h2>
+    <ul>
+      <li><a href="terms.html">利用規約 / Terms of Service</a></li>
+      <li><a href="privacy.html">プライバシーポリシー / Privacy Policy</a></li>
+      <li><a href="../data-deletion.html">データ削除の手順 / Data Deletion</a></li>
+      <li><a href="../contact.html">お問い合わせ / Contact</a></li>
+    </ul>
+  </section>
+
+  <section class="card lang-en">
+    <h2>About (English)</h2>
+    <p>Honda Lab TikTok API is the TikTok integration of "AffiliateAutoPost", a content management tool operated by the individual creator Honda Lab. It uses TikTok Login Kit and the Content Posting API so that the creator can upload or publish their own videos to the TikTok account they have authorized.</p>
+    <ul>
+      <li><code>user.info.basic</code>: shows the connected account's display name and avatar so the user can confirm the destination account.</li>
+      <li><code>video.upload</code>: sends a video to the user's TikTok inbox as a draft for editing in the TikTok app.</li>
+      <li><code>video.publish</code>: directly posts a video only after the user reviews the caption, privacy level, interaction settings and content disclosure, and explicitly clicks "Post".</li>
+    </ul>
+    <p>The tool never posts without the user's explicit action and does not collect other users' content or personal data. Users can disconnect at any time.</p>
+  </section>
+</main>
+<footer class="site"><div class="inner">
+  <a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="../data-deletion.html">Data Deletion</a><a href="../contact.html">Contact</a>
+  <p>© 2026 Honda Lab</p>
+</div></footer>
+</body>
+</html>

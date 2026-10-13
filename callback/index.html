@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>認証が完了しました｜Honda Lab</title>
+<link rel="icon" href="../assets/icon-32.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><div class="inner">
+  <a class="brand" href="../"><img src="../assets/icon-180.png" alt="">Honda Lab</a>
+</div></header>
+<main>
+<article class="card">
+  <h1 id="title">認証結果</h1>
+  <p id="message" class="muted">読み込み中…</p>
+  <div id="result" hidden>
+    <h3>認可コード（code）</h3>
+    <pre class="copy" id="code"></pre>
+    <p><button type="button" id="copy">コードをコピー</button></p>
+    <p class="notice">このコードは、AffiliateAutoPost の連携画面に貼り付けてください。コードは数分で無効になります。他人に共有しないでください。このページはコードをどこにも送信・保存しません。</p>
+    <p class="muted">state: <span id="state"></span></p>
+  </div>
+</article>
+</main>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var code = params.get('code') || params.get('auth_code');
+  var error = params.get('error') || params.get('error_code');
+  var message = document.getElementById('message');
+  if (code) {
+    document.getElementById('title').textContent = '認証が完了しました';
+    message.textContent = 'TikTok / Meta / Google から認可コードを受け取りました。';
+    document.getElementById('code').textContent = code;
+    document.getElementById('state').textContent = params.get('state') || '-';
+    document.getElementById('result').hidden = false;
+    document.getElementById('copy').addEventListener('click', function () {
+      navigator.clipboard.writeText(code).then(function () {
+        document.getElementById('copy').textContent = 'コピーしました';
+      });
+    });
+    history.replaceState(null, '', location.pathname);
+  } else if (error) {
+    document.getElementById('title').textContent = '認証できませんでした';
+    message.textContent = 'エラー：' + error + ' ' + (params.get('error_description') || '');
+  } else {
+    message.textContent = 'このページは、各SNSのログイン後に戻ってくるためのページ（OAuthリダイレクトURL）です。';
+  }
+})();
+</script>
+</body>
+</html>
