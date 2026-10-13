@@ -16,11 +16,15 @@ GitHub Pages: https://ktmryo1.github.io/honda-lab/
 
 ## Adding picks
 
-Add items to `picks.json`:
+`picks.json` is regenerated automatically by おすすめ商品スタジオ (`C:\AI_Tools\affiliate_introduction`,
+`app/server/src/services/site-picks.ts`) on startup and after every successful publish, then committed and
+pushed. Manual edits to `items` are overwritten. Item format:
 
 ```json
-{ "title": "商品名", "url": "https://...", "image": "https://...", "shop": "楽天市場", "comment": "ひとこと" }
+{ "title": "商品名", "url": "https://...", "image": "https://...", "shop": "ショップ名", "price": 1980, "date": "2026-10-14" }
 ```
+
+To stop the auto-update, set `honda_lab_sync` = `false` in the studio settings table.
 
 ## TikTok URL verification
 

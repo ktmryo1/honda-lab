@@ -120,6 +120,25 @@ button.secondary { background: #4b5263; }
 .pick { display: flex; flex-direction: column; gap: 6px; }
 .pick img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; background: #fff; border-radius: 10px; }
 .pick .tag { font-size: 11px; color: #fff; background: var(--accent); border-radius: 6px; padding: 1px 6px; align-self: flex-start; }
+.pick { border: 1px solid var(--border); border-radius: 12px; padding: 10px; }
+.pick strong { line-height: 1.5; }
+.pick .price { font-weight: 700; color: #bf0000; }
+.pick .small { font-size: 12px; }
+.pick a.buy {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #bf0000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.pick a.buy:hover { opacity: .85; }
+.links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.links a.primary:hover { color: #fff; opacity: .9; }
+.more { text-align: right; margin: 12px 0 0; }
 table { border-collapse: collapse; width: 100%; font-size: 14px; }
 th, td { border: 1px solid var(--border); padding: 8px; text-align: left; vertical-align: top; }
 th { background: #f2f3f7; }
